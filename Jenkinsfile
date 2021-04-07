@@ -43,16 +43,6 @@ spec:
                  }
                }
              }
-            stage('golang env pre prepare') {
-            steps{
-                 container('golang'){
-                     sh 'apk add --update make'
-                     sh 'apk add --update git'
-                     sh 'apk add --no-cache bash'
-                     sh 'go get golang.org/x/tools/cmd/goimports'
-                 }
-              }
-            }
         }
     }
     stage('checkout scm & check code fmt') {
